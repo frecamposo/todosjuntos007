@@ -23,7 +23,17 @@
             <a href="{% url 'GALE' %}">Galeria</a>
             <a href="{% url 'FORMU' %}">Formulario</a>
             <a href="{% url 'QUIEN' %}">Quienes Somos</a>
-            <a href="{% url 'ADMIN_MAS' %}">Administrador</a>
+            {% if user.is_authenticated %}
+               <a href="{% url 'ADMIN_MAS' %}">Administrador</a>
+               <a href="{% url 'ADMIN_MAS' %}">Cerrar</a>
+               <a href="">Bienvenido {{user.first_name}} {{user.last_name}}</a>
+            {% else %}
+               <a href="{% url 'ADMIN_MAS' %}">Login</a>
+               <a href="{% url 'FC' %}">Registrate</a>
+               
+            {% endif %}
+            
+            
         </nav>
     </header>
 

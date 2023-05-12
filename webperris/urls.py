@@ -12,4 +12,5 @@ urlpatterns = [
     path('buscar_nombre/',buscar_nombre,name='BUSCAR_NOMBRE'),
     path('buscar_descripcion/',buscar_descripcion,name='BUSCAR_DESCRIPCION'),
     path('buscar_categoria/<id>/',buscar_categoria,name='BUSCAR_CAT'),
+    path('formulario_colaborador/',formulario_colaborador,name='FC'),
 ]

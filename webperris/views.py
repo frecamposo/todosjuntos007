@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from django.contrib.auth.models import User
 # Create your views here.
 def index(request):
     cate=Categoria.objects.all()
@@ -8,7 +9,7 @@ def index(request):
     return render(request,"index.html",data)
 
 def galeria(request):
-    mascotas= Mascota.objects.all()
+    mascotas= Mascota.objects.filter(publicar=True)
     cantidad= Mascota.objects.all().count()
     data={'mascotas':mascotas}
     data['cantidad']=cantidad
@@ -72,4 +73,18 @@ def buscar_categoria(request,id):
     cate=Categoria.objects.get(nombre=id)
     mascotas = Mascota.objects.filter(categoria=cate)
     data={'mascotas':mascotas}
-    return render(request,"galeria.html",data)    
+    return render(request,"galeria.html",data) 
+
+def formulario_colaborador(request):
+    if request.POST:
+        nom=request.POST.get("txtNombre")
+        ape=request.POST.get("txtApellido")
+        p = request.POST.get("pwdPass1")
+        nom_usu= request.POST.get("txtNombreUser")
+        usu=User()
+        usu.first_name=nom
+        usu.last_name=ape
+        usu.username=nom_usu
+        usu.set_password(p)
+        usu.save()
+    return render(request,"formulario.html")   

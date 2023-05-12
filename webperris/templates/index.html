@@ -142,7 +142,9 @@
         <div class="contenedor">
           {% for cat in categorias %}
           <article>
-            <img src="{{cat.foto.url}}" alt="" />
+            <a href="{% url 'BUSCAR_CAT' cat.nombre %}">
+               <img src="{{cat.foto.url}}" alt="" />
+            </a>
             <h4>{{cat.nombre}}</h4>
           </article>
           {% endfor %}

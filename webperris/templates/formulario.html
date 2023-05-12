@@ -1,48 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+{% endblock css %}
+        
+ {% block contenedor %}
+       
+        <!-- bienvenidos -->
+        <section id="bienvenido">
+            <h2>Inscribete y Rescata Animales</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quas eius consequatur maiores ratione, tenetur corrupti consequuntur odio vero commodi illo a aperiam. Sequi mollitia praesentium modi distinctio ullam maiores!</p>            
+        </section>
+        <!-- formulario ingreso adopcion-->
+        <section id="formulario">            
+            <form action="{% url 'FC' %}" method="post" onsubmit="return validar()">
+                {% csrf_token %}
+                <h1>Incribete</h1>
+                <div class="contenedor-input">
+                    <input type="text" placeholder="ingrese nombre" class="col-p" name="txtNombre" id="txtNombre">
+                    <input type="text" placeholder="ingrese apellido" class="col-p" name="txtApellido" id="txtApellido">
+                    <input type="text" placeholder="ingrese nombre usuario" class="col-g" name="txtNombreUser" id="txtNombreUser">
+                    <input type="password" placeholder="ingrese pass" class="col-p" name="pwdPass1" id="pwdPass1">
+                    <input type="password" placeholder="repita pass" class="col-p" name="pwdPass2" id="pwdPass2">
 
-</head>
-<body>
-    <main>
-        <div class="container" style="margin: 45px;">
-            <form action="" method="post" onsubmit="return validar()">
-                <div class="mb-3" >
-                    <label for="">Nombre Usuario:</label>
-                    <input type="text" placeholder="ingrese usuario" name="" id="" required>                    
-                </div>
-                <div class="mb-3">
-                    <label for="">Password:</label>
-                    <input type="password" minlength="5" placeholder="ingrese pass" name="txtPass1" id="txtPass1" required>
-                </div> 
-                <div class="mb-3">
-                    <label for="">Repetir Password:</label>
-                    <input type="password" minlength="5" placeholder="repita pass" name="txtPass2" id="txtPass2" required>
-                </div> 
-                 
-                <div class="md-3">
-                    <label for="">Correo:</label>
-                    <input type="email" minlength="10" placeholder="ingrese correo" name="" id="" required>
-                </div>  
-                <div class="mb-3">
-                    <label for="">Fecha Nacimiento:</label>
-                    <input type="date"  name="" id="datFecha" required>
-                </div>
-                <div class="md-3">
-                    <input type="submit" value="Enviar">
-                    <input type="reset" value="Limpiar">
-                    <input type="button" value="Validacion" onclick="validarEdad()">
+                    <input type="submit" class="col-p" value="Enviar">
+                    <input type="reset" class="col-p" value="Limpiar">
                 </div>
             </form>
-        </div>
-    </main>
-   <script src="js/validaciones.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+        </section>
+       
+{% endblock contenedor %}       
+   
+{% block js %}
+<script src="{% static 'js/validaciones.js' %}"></script>
+{% endblock js %}
+    
