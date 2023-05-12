@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenedor %}
+
+      <!-- bienvenidos -->
+        <section id="bienvenido">
+            <h2>Ficha de Masota que busca un hogar</h2>            
+        </section>
+        <!-- galeria de perritos-->
+        <section id="info">            
+            <div class="contenedor">          
+                <article>
+                    <img src="{{item.foto.url}}" alt="">
+                    <h4>{{item.nombre}}</h4>
+                    <h4>{{item.edad}}</h4>
+                    <h4>{{item.descripcion}}</h4>
+                    <h4>{{item.categoria.nombre}}</h4>
+                </article>              
+            </div>
+        </section>
+
+{% endblock contenedor %}

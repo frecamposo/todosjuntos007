@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenedor %}
+
+      <!-- bienvenidos -->
+        <section id="bienvenido">
+            <h2>Galeria de Masotas que buscan un hogar</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quas eius consequatur maiores ratione, tenetur corrupti consequuntur odio vero commodi illo a aperiam. Sequi mollitia praesentium modi distinctio ullam maiores!</p>            
+        </section>
+
+        <!-- galeria de perritos-->
+        <section id="info">
+            <h3>algunas mascotas de nuestro variado stock: {{cantidad}}</h3>
+            <div class="contenedor">
+                {% for item in mascotas %}
+                <article>
+                    <a href="{% url 'FICHA_MASCOTA' item.idMascota %}">
+                        <img src="{{item.foto.url}}" alt="">
+                    </a>
+                    <h4>{{item.nombre}}</h4>
+                </article>
+                {% endfor %}
+                
+                
+            </div>
+        </section>
+
+{% endblock contenedor %}

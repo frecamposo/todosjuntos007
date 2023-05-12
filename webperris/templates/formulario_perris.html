@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+{% endblock css %}
+        
+ {% block contenedor %}
+       
+        <!-- bienvenidos -->
+        <section id="bienvenido">
+            <h2>Inscribete y Adopta una Mascota</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quas eius consequatur maiores ratione, tenetur corrupti consequuntur odio vero commodi illo a aperiam. Sequi mollitia praesentium modi distinctio ullam maiores!</p>            
+        </section>
+        <!-- formulario ingreso adopcion-->
+        <section id="formulario">            
+            <form action="" method="post" onsubmit="return validar()">
+                <h1>Ingrese Sus Datos de adopcion</h1>
+                <div class="contenedor-input">
+                    <input type="text" placeholder="ingrese nombre" class="col-p" name="txtNombre" id="txtNombre">
+                    <input type="text" placeholder="ingrese apellido" class="col-p" name="txtApellido" id="txtApellido">
+                    <input type="text" placeholder="ingrese direccion" class="col-g" name="txtDireccion" id="txtDireccion">
+                    <input type="text" placeholder="ingrese fono" class="col-p" name="txtFono" id="txtFono">
+                    <input type="date" class="col-p" name="datFechaNaci" id="datFechaNaci">
+                    <input type="text" placeholder="ingrese nombre usuario" class="col-g" name="txtNombreUser" id="txtNombreUser">
+                    <input type="text" placeholder="ingrese rut" class="col-g" name="txtRut" id="txtRut">
+                    <input type="password" placeholder="ingrese pass" class="col-p" name="pwdPass1" id="pwdPass1">
+                    <input type="password" placeholder="repita pass" class="col-p" name="pwdPass2" id="pwdPass2">
+
+                    <input type="submit" class="col-p" value="Enviar">
+                    <input type="reset" class="col-p" value="Limpiar">
+                    <input type="button" value="Grabar" onclick="grabar()">
+                    <input type="button" value="Leer" onclick="leer()">
+                </div>
+            </form>
+        </section>
+       
+{% endblock contenedor %}       
+   
+{% block js %}
+<script src="{% static 'js/validaciones.js' %}"></script>
+{% endblock js %}
+    

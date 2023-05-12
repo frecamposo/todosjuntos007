@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <main>
+        <div class="container" style="margin: 45px;">
+            <form action="" method="post" onsubmit="return validar()">
+                <div class="mb-3" >
+                    <label for="">Nombre Usuario:</label>
+                    <input type="text" placeholder="ingrese usuario" name="" id="" required>                    
+                </div>
+                <div class="mb-3">
+                    <label for="">Password:</label>
+                    <input type="password" minlength="5" placeholder="ingrese pass" name="txtPass1" id="txtPass1" required>
+                </div> 
+                <div class="mb-3">
+                    <label for="">Repetir Password:</label>
+                    <input type="password" minlength="5" placeholder="repita pass" name="txtPass2" id="txtPass2" required>
+                </div> 
+                 
+                <div class="md-3">
+                    <label for="">Correo:</label>
+                    <input type="email" minlength="10" placeholder="ingrese correo" name="" id="" required>
+                </div>  
+                <div class="mb-3">
+                    <label for="">Fecha Nacimiento:</label>
+                    <input type="date"  name="" id="datFecha" required>
+                </div>
+                <div class="md-3">
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Limpiar">
+                    <input type="button" value="Validacion" onclick="validarEdad()">
+                </div>
+            </form>
+        </div>
+    </main>
+   <script src="js/validaciones.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

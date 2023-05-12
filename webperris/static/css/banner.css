@@ -1,0 +1,31 @@
+#banner {
+    margin-top: 50px;
+}
+#banner img{
+    width: 100%;
+}
+#banner .contenedor{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    color: white;
+}
+
+#banner .contenedor h1{
+    font-size: 29px;
+}
+
+#banner .contenedor a{
+    display: block;
+    width: 100px;
+    height: 25px;
+    background-color: orange;
+    border: solid 2px black;
+    padding: 10px;
+    margin-top: 25px;
+    text-decoration: none;
+}
+#banner .contenedor a:hover{
+    background-color: white;
+    color: black;
+}

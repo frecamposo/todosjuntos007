@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+{% endblock css %}
+        
+ {% block contenedor %}
+       
+        <!-- bienvenidos -->
+        <section id="bienvenido">
+            <h2>Administrador de Mascotas</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quas eius consequatur maiores ratione, tenetur corrupti consequuntur odio vero commodi illo a aperiam. Sequi mollitia praesentium modi distinctio ullam maiores!</p>            
+        </section>
+        <!-- formulario ingreso adopcion-->
+        <section id="formulario">            
+            <form action="{% url 'ADMIN_MAS' %}" method="post" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <h1>Ingrese nueva mascota</h1>
+                <div class="contenedor-input">
+                    <input type="number" placeholder="ingrese id" class="col-g" name="txtId" id="txtId">                    
+                    <input type="text" placeholder="ingrese nombre" class="col-p" name="txtNombre" id="txtNombre">
+                    <input type="number" placeholder="ingrese edad" class="col-p" name="txtEdad" id="txtEdad">
+                    <textarea name="txtDesc" class="col-g" id="txtDesc" cols="30" rows="10">                        
+                    </textarea>
+                    <input type="file" name="txtImg" id="txtImg" class="col-g">
+                    <select name="cboCategoria" id="cboCategoria" class="col-g">
+                        {% for item in categorias %}
+                        <option>{{item.nombre}}</option>
+                        {% endfor %}                        
+                    </select>
+                    <input type="submit" class="col-p" value="Enviar">
+                    <input type="reset" class="col-p" value="Limpiar">
+                </div>
+            </form>
+        </section>
+        <section>
+            <div style="font-size: xx-large;color: crimson;text-align: center;">
+                {{mensaje}}
+            </div>
+        </section>
+       
+{% endblock contenedor %}       
+   
+{% block js %}
+<script src="{% static 'js/validaciones.js' %}"></script>
+{% endblock js %}
+    

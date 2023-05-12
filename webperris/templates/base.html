@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Perris</title>
+    <link rel="stylesheet" href="{% static 'css/fontello.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    {% block css %}
+    
+    {% endblock css %}
+</head>
+<body>
+    <!-- cabecera de la pagina-->
+    <header>        
+        <input type="checkbox" name="" id="menu-bar">
+        <label class="icon-guidedog" for="menu-bar"></label>
+        <h1 class="icon-guidedog">Mis Perris</h1>
+        <nav class="menu">
+            <a href="{% url 'IND' %}">Inicio</a>
+            <a href="{% url 'GALE' %}">Galeria</a>
+            <a href="{% url 'FORMU' %}">Formulario</a>
+            <a href="{% url 'QUIEN' %}">Quienes Somos</a>
+            <a href="{% url 'ADMIN_MAS' %}">Administrador</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- banner -->
+        <section id="banner">
+            <img src="{% static 'img/tengo-un-perro-sh.jpg' %}" alt="">
+            <div class="contenedor">
+                <h1>Mascotas Felices en Mis Perris</h1>
+                <p>¿Cual es la mejor mascota para usted?</p>
+                <a href="">Leer Mas...</a>    
+            </div>
+        </section>
+        {% block contenedor %}
+        
+        {% endblock contenedor %}
+        
+    </main>
+    <footer>
+        <p>Mis Perris</p>
+    </footer>
+    {% block js %}
+    
+    {% endblock js %}
+</body>
+</html>
