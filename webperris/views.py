@@ -4,7 +4,6 @@ from .models import *
 def index(request):
     cate=Categoria.objects.all()
     masc=Mascota.objects.filter(publicar=True).order_by("-idMascota")[:3]
-
     data={'categorias':cate,'mascotas':masc}
     return render(request,"index.html",data)
 
